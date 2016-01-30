@@ -15,9 +15,11 @@ public class RitualObjectBehaviour : MonoBehaviour {
 	void Update () {
 		count--;
 		if (count == 1) {
-			if (circle != null)
+			if (circle != null) {
 				circle.removeObject ();
-			this.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (250, player, 3);
+				this.leaveCircle ();
+			}
+			this.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (250, player*100, 3);
 
 		}
 	}
@@ -45,12 +47,12 @@ public class RitualObjectBehaviour : MonoBehaviour {
 	void OnMouseOver (){
 		if(Input.GetMouseButtonDown(0))
 			{
-			GameObject p = GameObject.FindGameObjectWithTag ("Player");
+				GameObject p = GameObject.FindGameObjectWithTag ("Player");
 
-			Vector3 v = p.transform.forward;
-			p.GetComponentInChildren<CatPaw>().startHit (v);
-			Debug.Log ("VECTOR" + (v*100).ToString ());
-			StartHitDelay (v, 5);
+				Vector3 v = p.transform.forward;
+				p.GetComponentInChildren<CatPaw> ().startHit (v);
+				Debug.Log ("VECTOR" + (v * 100).ToString ());
+				StartHitDelay (v, 5);
 			}
 	}
 
