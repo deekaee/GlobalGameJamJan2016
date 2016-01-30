@@ -1,0 +1,15 @@
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/UnityEngine.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/UnityEditor.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Mono.Cecil.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Unity.DataContract.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Mono.Cecil.Mdb.dll
