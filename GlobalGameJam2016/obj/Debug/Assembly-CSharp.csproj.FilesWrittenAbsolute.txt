@@ -20,7 +20,6 @@
 /Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/obj/Debug/Assembly-CSharp.dll
 /Users/rina/Documents/GlobalGameJamJan2016/GlobalGameJam2016/obj/Debug/Assembly-CSharp.dll.mdb
 =======
-=======
 /Users/Diane/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Assembly-CSharp.dll.mdb
 /Users/Diane/Documents/GlobalGameJamJan2016/GlobalGameJam2016/Temp/bin/Debug/Assembly-CSharp.dll
 /Users/Diane/Documents/GlobalGameJamJan2016/GlobalGameJam2016/obj/Debug/Assembly-CSharp.dll
