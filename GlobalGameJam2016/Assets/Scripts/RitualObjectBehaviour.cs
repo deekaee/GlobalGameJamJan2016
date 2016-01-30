@@ -38,9 +38,11 @@ public class RitualObjectBehaviour : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0))
 			{
 			GameObject p = GameObject.FindGameObjectWithTag ("Player");
+
 			Vector3 v = p.transform.forward;
+			p.GetComponentInChildren<CatPaw>().startHit (v);
 			Debug.Log ("VECTOR" + (v*100).ToString ());
-			this.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (1000, p.transform.position, 5);
+			this.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (250, p.transform.position, 3);
 			}
 	}
 
