@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class RitualObjectBehaviour : MonoBehaviour {
-	public string name;
+	public string IDname;
+	public enum type {Circle, Cone, Rectangle, Broom, Star};
+	public type shape;
 	private RitualCircle circle  = null;
 	int count = 0;
 	Vector3 player;
