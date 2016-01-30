@@ -7,8 +7,8 @@ public class RitualChecker : MonoBehaviour {
 	public GameObject Bad;
 	// Use this for initialization
 	void Start () {
-		Good.GetComponent<ParticleEmitter> ().emit = false;
-		Bad.GetComponent<ParticleEmitter> ().emit = false;
+		Good.GetComponentInChildren<ParticleSystem> ().enableEmission = false;
+		Bad.GetComponentInChildren<ParticleSystem> ().enableEmission = false;
 	}
 	
 	// Update is called once per frame
