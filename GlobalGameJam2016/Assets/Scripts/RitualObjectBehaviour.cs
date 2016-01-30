@@ -4,6 +4,8 @@ using System.Collections;
 public class RitualObjectBehaviour : MonoBehaviour {
 	public string name;
 	private RitualCircle circle  = null;
+	int count = 0;
+	Vector3 player;
 	// Use this for initialization
 	void Start () {
 	
@@ -11,7 +13,13 @@ public class RitualObjectBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		count--;
+		if (count == 1) {
+			if (circle != null)
+				circle.removeObject ();
+			this.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (250, player, 3);
+
+		}
 	}
 
 	public void setCircle(RitualCircle r)
@@ -42,8 +50,13 @@ public class RitualObjectBehaviour : MonoBehaviour {
 			Vector3 v = p.transform.forward;
 			p.GetComponentInChildren<CatPaw>().startHit (v);
 			Debug.Log ("VECTOR" + (v*100).ToString ());
-			this.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (250, p.transform.position, 3);
+			StartHitDelay (v, 5);
 			}
 	}
 
+	void StartHitDelay(Vector3 p, int delay)
+	{
+		player = p;
+		count = delay;
+	}
 }
