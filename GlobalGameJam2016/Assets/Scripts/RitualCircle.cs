@@ -7,6 +7,7 @@ public class RitualCircle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		UnityEngine.Cursor.visible = true;
+		this.GetComponent<ParticleEmitter> ().emit = false;
 	}
 	
 	// Update is called once per frame
@@ -23,6 +24,7 @@ public class RitualCircle : MonoBehaviour {
 			myObject = other.gameObject;
 			RitualObjectBehaviour b = other.gameObject.GetComponent<RitualObjectBehaviour> ();
 			b.setCircle (this);
+			this.GetComponent<ParticleEmitter> ().emit = true;
 			// Add particle effects
 
 
@@ -39,6 +41,7 @@ public class RitualCircle : MonoBehaviour {
 	{
 		myObject = null;
 		myObject.GetComponent<Rigidbody> ().isKinematic = true;
+		this.GetComponent<ParticleEmitter> ().emit = false;
 	}
 
 }
