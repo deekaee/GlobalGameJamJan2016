@@ -37,9 +37,10 @@ public class RitualObjectBehaviour : MonoBehaviour {
 	void OnMouseOver (){
 		if(Input.GetMouseButtonDown(0))
 			{
-			Vector3 v = GameObject.FindGameObjectWithTag ("Player").transform.forward;
+			GameObject p = GameObject.FindGameObjectWithTag ("Player");
+			Vector3 v = p.transform.forward;
 			Debug.Log ("VECTOR" + (v*100).ToString ());
-			this.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (10, this.transform.position, 1);
+			this.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (1000, p.transform.position, 5);
 			}
 	}
 
