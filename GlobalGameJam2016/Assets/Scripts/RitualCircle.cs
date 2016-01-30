@@ -35,4 +35,10 @@ public class RitualCircle : MonoBehaviour {
 		return myObject!=null;
 	}
 
+	public void removeObject()
+	{
+		myObject = null;
+		myObject.GetComponent<Rigidbody> ().isKinematic = true;
+	}
+
 }
