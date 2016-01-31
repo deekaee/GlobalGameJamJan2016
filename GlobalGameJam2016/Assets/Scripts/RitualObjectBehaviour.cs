@@ -111,4 +111,14 @@ public class RitualObjectBehaviour : MonoBehaviour {
 		if (hitsound != null)
 			AudioSource.PlayClipAtPoint (hitsound, transform.position);
 	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.collider.gameObject.tag.Equals("Floor"))
+			{
+				if (hitsound != null)
+					AudioSource.PlayClipAtPoint (hitsound, transform.position);
+			}
+			
+	}
 }
