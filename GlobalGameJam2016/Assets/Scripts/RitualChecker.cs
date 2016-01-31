@@ -6,6 +6,7 @@ public class RitualChecker : MonoBehaviour {
 	public GameObject Good;
 	public GameObject Bad;
 	public GameObject[] SuccessMice;
+	public AudioClip SuccessSound;
 
 	int count = 0;
 	// Use this for initialization
@@ -69,6 +70,9 @@ public class RitualChecker : MonoBehaviour {
 	{
 		Good.GetComponentInChildren<ParticleSystem>().enableEmission = true;
 		count = 400;
+		if (SuccessSound != null) {
+			AudioSource.PlayClipAtPoint (SuccessSound, transform.position);
+		}
 	}
 
 	void GenerateMouse()
