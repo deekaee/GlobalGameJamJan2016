@@ -4,6 +4,7 @@ using System.Collections;
 public class RitualCircle : MonoBehaviour {
 	private GameObject myObject = null;
 	public RitualChecker r;
+	public RitualObjectBehaviour.type type;
 	public int delay = 400;
 	// Use this for initialization
 	void Start () {
@@ -17,22 +18,30 @@ public class RitualCircle : MonoBehaviour {
 	}
 		
 	void OnTriggerEnter(Collider other) {
+		Debug.Log ("stuff in trigger enter");
 		if (other.tag.Equals("RitualObject") && !other.tag.Equals("Player") && !hasObject()&& delay <=0) {
-			other.attachedRigidbody.velocity = new Vector3 (0, 0, 0);
-			other.attachedRigidbody.isKinematic = true;
-			//other.attachedRigidbody.rotation = new Vector3 (0, 0, 0);
-			other.gameObject.transform.position =  this.gameObject.transform.position;
-			myObject = other.gameObject;
-			RitualObjectBehaviour b = other.gameObject.GetComponent<RitualObjectBehaviour> ();
-			b.setCircle (this);
-			this.GetComponentInChildren<ParticleSystem> ().enableEmission = true;
-			// Add particle effects
-			delay = 400;
+			//if we are in the right circle
+			if (type == other.gameObject.GetComponent<RitualObjectBehaviour> ().shape) {
+				other.attachedRigidbody.velocity = new Vector3 (0, 0, 0);
+				other.attachedRigidbody.isKinematic = true;
+				//other.attachedRigidbody.rotation = new Vector3 (0, 0, 0);
+				other.gameObject.transform.position = this.gameObject.transform.position;
+				myObject = other.gameObject;
+				RitualObjectBehaviour b = other.gameObject.GetComponent<RitualObjectBehaviour> ();
+				b.setCircle (this);
+				this.GetComponentInChildren<ParticleSystem> ().enableEmission = true;
+				// Add particle effects
+				delay = 400;
 
-			Debug.Log ("Add Object");
+				Debug.Log ("Add Object");
+			}
 		}
 	}
 
+	public GameObject getObject()
+	{
+		return myObject;
+	}
 	public bool hasObject()
 	{
 		return myObject!=null;
