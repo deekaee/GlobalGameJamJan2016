@@ -9,6 +9,7 @@ public class PlayVideo : MonoBehaviour {
 	void Start()
 	{
 		myMovie.Play();
+		AudioSource.PlayClipAtPoint (myMovie.audioClip, Vector3.zero);
 	}
 
 	void OnGUI()
@@ -20,4 +21,14 @@ public class PlayVideo : MonoBehaviour {
 		else
 			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), myMovie);
 	}
+
+	void Update()
+	{
+
+		if(Input.GetMouseButtonDown(0))
+		{
+			Application.LoadLevel(1);
+		}
+	}
+
 }
