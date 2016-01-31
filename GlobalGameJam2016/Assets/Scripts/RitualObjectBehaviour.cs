@@ -46,11 +46,34 @@ public class RitualObjectBehaviour : MonoBehaviour {
 		;
 		//calculate distance for cursor size
 		RectTransform t = g.GetComponentInChildren<RectTransform>();
-		Vector3 currentScale = new Vector3 (t.localScale.x, t.localScale.y, t.localScale.z);
+		//Vector3 currentScale = new Vector3 (t.localScale.x, t.localScale.y, t.localScale.z);
 		float distance = Vector3.Distance (this.gameObject.transform.position, GameObject.FindGameObjectWithTag ("Player").transform.position);
 		float maxDistance = 2f;
-		float b = Mathf.InverseLerp (maxDistance, 1, distance/maxDistance);
+		//float distance = 0;
+		//float b = Mathf.InverseLerp (maxDistance, 1, distance/maxDistance);
 
+		//t.localScale = new Vector3 (b,b,b)*6;
+		//RaycastHit hit;
+		//GameObject p2 = GameObject.FindGameObjectWithTag ("Player");
+
+		//Vector3 v1 = p2.transform.position;
+		//GameObject c = GameObject.FindGameObjectWithTag ("MainCamera");
+		//Camera c1 = c.GetComponent <Camera> ();
+		//Ray r1 = c1.ScreenPointToRay (new Vector3 (c1.pixelWidth, c1.pixelHeight, 0 ));
+		//Ray r = new Ray (v1,v1 - transform.position);
+		//Debug.DrawRay (r.origin, r.direction);
+
+		//if (Physics.Raycast (r, out hit, 10000 )) {
+		//	Debug.Log ("HIT");
+			//if (hit.collider.gameObject.GetComponentInParent<RitualObjectBehaviour>() != null)
+		//			distance = hit.distance;
+		//	Debug.Log (distance);
+		//}
+		float b = Mathf.InverseLerp (maxDistance, 1, distance/maxDistance);
+		//if (distance < 0)
+		//	b = 0;
+		//if (distance > maxDistance)
+		//	b = 0;
 		t.localScale = new Vector3 (b,b,b)*6;
 
 		if (g != null && distance > maxDistance)
