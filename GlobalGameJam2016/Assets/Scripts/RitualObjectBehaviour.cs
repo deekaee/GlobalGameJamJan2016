@@ -57,7 +57,7 @@ public class RitualObjectBehaviour : MonoBehaviour {
 			g.SetActive (true);
 
 		//if clicking on the item
-		if(Input.GetMouseButtonDown(0) && distance < maxDistance)
+		if(Input.GetMouseButtonDown(0) && distance > maxDistance)
 			{
 				GameObject p = GameObject.FindGameObjectWithTag ("Player");
 
