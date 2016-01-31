@@ -5,6 +5,8 @@ public class RitualChecker : MonoBehaviour {
 	public RitualCircle[] RitualCircles;
 	public GameObject Good;
 	public GameObject Bad;
+	public GameObject[] SuccessMice;
+
 	int count = 0;
 	// Use this for initialization
 	void Start () {
@@ -19,13 +21,17 @@ public class RitualChecker : MonoBehaviour {
 		//Turn off ritual
 		if (count > 1) {
 			count--;
+			int r = Random.Range (0, 20);
+			if (r == 0)
+				GenerateMouse ();
 		}
 		if (count == 1) {
 			Good.GetComponentInChildren<ParticleSystem> ().enableEmission = false;
 			Bad.GetComponentInChildren<ParticleSystem> ().enableEmission = false;
 			count--;
+
 		}
-		if (Input.GetKeyDown(KeyCode.A))
+		if (Input.GetKeyDown(KeyCode.L))
 		{
 			StartRitual();
 		}
@@ -63,6 +69,14 @@ public class RitualChecker : MonoBehaviour {
 	{
 		Good.GetComponentInChildren<ParticleSystem>().enableEmission = true;
 		count = 400;
+	}
+
+	void GenerateMouse()
+	{
+		Vector3 position = Good.transform.position + new Vector3 (0, 1, 0);
+		int r = Random.Range (0, 3);
+		GameObject b = (GameObject) Instantiate(SuccessMice[r], position, Quaternion.identity);
+		b.GetComponent<Rigidbody> ().AddExplosionForce (1000, Good.transform.position, 3);
 	}
 
 }

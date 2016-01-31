@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RitualObjectBehaviour : MonoBehaviour {
 	public string IDname;
-	public enum type {Circle, Eye, Rectangle, Broom, Crescent};
+	public enum type {Circle, Eye, Rectangle, Broom, Crescent, None};
 	public type shape;
 	private RitualCircle circle  = null;
 	int count = 0;
