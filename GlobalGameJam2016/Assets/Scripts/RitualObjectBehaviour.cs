@@ -4,6 +4,7 @@ using System.Collections;
 public class RitualObjectBehaviour : MonoBehaviour {
 	public string IDname;
 	public enum type {Circle, Eye, Rectangle, Broom, Crescent, None};
+	public AudioClip hitsound;
 	public type shape;
 	private RitualCircle circle  = null;
 	int count = 0;
@@ -107,6 +108,7 @@ public class RitualObjectBehaviour : MonoBehaviour {
 			this.leaveCircle ();
 		}
 		this.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (1000, p, 3);
-
+		if (hitsound != null)
+			AudioSource.PlayClipAtPoint (hitsound, transform.position);
 	}
 }
